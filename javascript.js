@@ -9,25 +9,25 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let election = prompt("Rock, Paper or Scissors?").toLowerCase().trim();
+  let myChoice = prompt("Rock, Paper or Scissors?").toLowerCase().trim();
 
-//   if (election != "rock") 
-//     {
-//     do {
-//       election = prompt("Try again! \n Rock, Paper or Scissors?")
-//         .toLowerCase()
-//         .trim();
-//     } while (election == "rock");
-//   }
+  if (myChoice != "rock" || myChoice != "paper" || myChoice != "scissors") {
+    do {
+      myChoice = prompt("Try again! \n Rock, Paper or Scissors?")
+        .toLowerCase()
+        .trim();
+    } while (myChoice == "rock" || myChoice == "paper" || myChoice == "scissors");
+  }
 
-  return `Your choice is: ${election}`;
+  let primerMayuscula = myChoice.charAt(0).toUpperCase()
+  
+  let restoPalabra = myChoice.slice(1)
+
+
+  return `Your choice is: ${primerMayuscula+restoPalabra}`;
 }
 
-function letsPlay() {
-  getHumanChoice();
-  getComputerChoice();
-
-  return `${getHumanChoice()} | ${getComputerChoice()}`;
+let letsPlay = () => {
+  return `${getHumanChoice()} | ${getComputerChoice()}`
 }
 
-function score() {}
